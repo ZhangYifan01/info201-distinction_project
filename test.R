@@ -8,9 +8,9 @@ library(spotifyr)
 #Sys.setenv(SPOTIFY_CLIENT_SECRET = "066386b6f54743d5b8d9a6581e64f41c")
 access_token <- get_spotify_access_token()
 
-#Khalid <- get_artist_audio_features('Khalid')
-Khalid <- get_artists("Khalid") %>% 
-  filter(Khalid, artist_name == "Khalid")
+Khalid <- get_artist_audio_features('Khalid')
+#Khalid <- get_artists("Khalid") %>% 
+#  filter(Khalid, artist_name == "Khalid")
 #Khalidalbums <- get_albums("Khalid")
 
 #authorize_base <- "https://accounts.spotify.com"
