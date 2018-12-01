@@ -10,7 +10,8 @@ my_ui <- fluidPage(
     ),
     # specify content for the "main" column
     mainPanel(   
-      plotOutput("artist_plot", height = "800px")
+      plotOutput("artist_danceability", height = "800px"),
+      plotOutput("valence_dance")
     )
   )
 )
