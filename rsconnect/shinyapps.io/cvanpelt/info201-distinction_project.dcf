@@ -5,6 +5,6 @@ account: cvanpelt
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 599335
-bundleId: 1733272
+bundleId: 1733383
 url: https://cvanpelt.shinyapps.io/info201-distinction_project/
-when: 1543700242.71623
+when: 1543706846.16418

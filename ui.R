@@ -1,4 +1,5 @@
 library(shiny)
+library(shinyWidgets)
 
 my_ui <- fluidPage(
   titlePanel("Spotify Artist Information"),
@@ -6,7 +7,7 @@ my_ui <- fluidPage(
   sidebarLayout( 
     # specify content for the "sidebar" column
     sidebarPanel(   
-      textInput("artist", label = "What artist do you want to know about?", value = "Khalid")
+      searchInput("artist", label = "What artist do you want to know about?")
     ),
     # specify content for the "main" column
     mainPanel(   
