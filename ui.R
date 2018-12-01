@@ -6,12 +6,11 @@ my_ui <- fluidPage(
   sidebarLayout( 
     # specify content for the "sidebar" column
     sidebarPanel(   
-      textInput("artist", label = "What artist do you want to know about?")
+      textInput("artist", label = "What artist do you want to know about?", value = "Khalid")
     ),
     # specify content for the "main" column
     mainPanel(   
-      plotOutput("artist_plot"),
-      textOutput("num_states")
+      plotOutput("artist_plot", height = "800px")
     )
   )
 )
