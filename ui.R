@@ -1,5 +1,13 @@
 library(shiny)
 library(shinyWidgets)
+library(plotly)
+
+title <- "Spotify Artist Information Project"
+by <- "By Cole Van Pelt, Joseph Wu & Yifan Zhang"
+API_info <- "Our project utilizes the data provided by the Spotify API Project to create graphs showing different Spotify artists' top songs' danceability distribution and relationship between danceability and valence. We access the data stored in the API using a package called SpotifyR which wraps API calls into methods. In order to access the data, you need a developer Spotify account as well as the Spotify ID and secret ID linked to that developer account."
+Plot_info <- "The first plot is a bar graph showing the danceability of up to the top 50 most popular songs by the artist searched. If the artist has less than 50 songs, only the number of songs they have will be shown. Our second plot is a scatter plot showing the correlation between danceability and valence. On this plot there is also a trend line of the correlation with an indicator for how much variation there is from it."
+Measurment_info <- "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. Valence is a measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry)."
+Disclaimer <- "Some artist don't allow Spotify to expose their data to the public, so their data cannot be fetched."
 
 my_ui <- fluidPage(
   titlePanel("Spotify Artist Information"),
@@ -8,10 +16,8 @@ my_ui <- fluidPage(
     # specify content for the "sidebar" column
     sidebarPanel(   
       searchInput("artist", label = "What artist do you want to know about?"),
-      p("Type in the name of an artist to see his/her most popular songs' dancebility distribution and the 
-          relationship between valence and dancebility. Some artists' data may not be shown because of 
-          privacy issues. This app only applies to artists who give Spotify full accesss to their data. Try 
-          these if you have no idea whose name to type in:"),
+      p("Type in the name of an artist to see information about his/her most popular songs.
+        If you have no idea whose name to type in try these:"),
       p("-----------"),
       p("Coldplay"),
       p("David Guetta"),
@@ -22,10 +28,20 @@ my_ui <- fluidPage(
       p("Bruno Mars")
     ),
     # specify content for the "main" column
-    mainPanel(   
-      plotOutput("artist_danceability", height = "800px"),
-      plotOutput("valence_dance", hover = hoverOpts("plot_hover", delay = 100, delayType = "debounce")),
-      textOutput("song_info")
+    mainPanel(
+      tabsetPanel(type = "tabs",
+                  tabPanel("Danceability and Popularity", 
+                           plotOutput("plot1", height = "800px")),
+                  tabPanel("Danceability and Valence", 
+                           plotlyOutput("plot2"), height = "800px"),
+                  tabPanel("About", 
+                           h1(title),
+                           h3(by),
+                           p(API_info),
+                           p(Plot_info),
+                           p(Measurment_info),
+                           p(Disclaimer))
+      )
     )
   )
 )
