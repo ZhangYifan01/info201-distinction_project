@@ -1,2 +1,2 @@
 # info201-distinction_project
-This is the distinction project of 2018 Autumn info 201 class 
+This is the group project for BC4. Our project can be found ![here](https://cvanpelt.shinyapps.io/info201-distinction_project/)

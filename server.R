@@ -42,7 +42,7 @@ my_server <- function(input, output) {
     
     # create plotly scatterplot of danceability versus valence with trendline
     plot2 <- ggplot(data = artist_songs) +
-      geom_point(mapping = aes(x = danceability, y = valence, text = paste("Song:", track_name))) +
+      geom_point(mapping = aes(x = danceability, y = valence, text = paste("Song:", track_name), color = track_popularity)) +
       geom_smooth(mapping = aes(x = danceability, y = valence))
     plot2 <- ggplotly(plot2, layerData = 2, tooltip = "text")
     return(plot2)
