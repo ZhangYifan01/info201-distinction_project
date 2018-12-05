@@ -125,3 +125,7 @@ ui <- fluidPage(
     )
   )
 )
+
+setwd("~/Documents/Classwork/info201/info201-distinction_project")
+library(rsconnect)
+deployApp()
