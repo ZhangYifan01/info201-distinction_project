@@ -6,8 +6,6 @@ library(shinyWidgets)
 library(plotly)
 
 # make sure to run the sys.setenv to set the spotify client keys. These can be obtained by creating a developer spotify account
-Sys.setenv(SPOTIFY_CLIENT_ID = "14c1d5db508741c2bd9e25a36f6d04ee")
-Sys.setenv(SPOTIFY_CLIENT_SECRET = "066386b6f54743d5b8d9a6581e64f41c")
 
 my_server <- function(input, output) {
   output$plot1 <- renderPlot({
