@@ -12,8 +12,10 @@ API_info <- "Our project utilizes the data provided by the Spotify API Project t
 Audience <- "Our target audience for this project is people who stream music and care about the danceability 
   and valence of their music. This will tend to be people in their late teens and early twenties, because 
   they are the primary group that uses streaming services, and they care the most about how easy a song is 
-  to dance to and how it makes them feel. Even though our data is acquired from Spotify, it can be used to 
-  find trends in all streaming services, so our audience is not restricted to just Spotify users."
+  to dance to and how it makes them feel. They also tend to be the most passionate fans of artists and would 
+  be the most likely to care about data about an artist’s top 50 songs. Even though our data is acquired from 
+  Spotify, it can be used to find trends in all streaming services, so our audience is not restricted to just 
+  Spotify users."
 Plot_info <- "The first plot is a bar graph showing the danceability of up to the top 50 most popular songs 
   by the artist searched. If the artist has less than 50 songs, only the number of songs they have will be 
   shown. Our second plot is a scatter plot showing the correlation between danceability and valence. On this
